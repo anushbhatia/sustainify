@@ -1,0 +1,97 @@
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% get_current_language as language_code %}
+<!DOCTYPE html>
+<html lang="{{ language_code}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <!----Fonts for this project---->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!--Bootstrap CDN--->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!--Title of the website-->
+    <title>Sustainify</title>
+</head>
+<body style="background-color: white;">
+
+  <!----------------------Navbar Starts------------------------------------------>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Sustainify</a>
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/411/411712.png" alt="" width="30" height="25">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="{% url 'about' %}">About Sustainify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="#">Rewards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="#">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="#">Register</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'accounts:log_in' %}">{% trans 'Log in' %}</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'accounts:sign_up' %}">{% trans 'Create an account' %}</a>
+          </li>
+      {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!----------------------Navbar Ends------------------------------------>
+  <div class="container-fluid mt-3">
+
+    {% bootstrap_messages %}
+
+    {% block content %}
+        No content.
+    {% endblock %}
+
+</div>
+
+  
+  <section>
+    <footer class="footer mt-auto py-3 bg-dark">
+      <div class="container text-center" style="color: #ffffff;">
+        <span class="text-muted">Designed and made by Code Knights &#9889;</span>
+      </div>
+    </footer>
+  </section>
+  <!--Js cdn for bootstrap starts-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <!--Js cdn for bootstrap ends---->
+  <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)})
+  </script>
+</body>
+</html>

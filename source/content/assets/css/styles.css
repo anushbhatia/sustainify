@@ -1,2 +1,22 @@
 /* Hi there */
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1B262C;
+    font-family: 'Roboto', sans-serif;
+    /* color: #BBE1FA; */
+}
+
+.masthead {
+    height: 85vh;
+    min-height: 500px;
+    background-image: url('https://images.unsplash.com/photo-1601370690183-1c7796ecec61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }

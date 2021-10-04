@@ -1,16 +1,28 @@
-{% extends 'layouts/default/page.html' %}
+{% extends 'layouts/default/base.html' %}
 
 {% load i18n %}
 
 {% block content %}
 
     {% if request.user.is_authenticated %}
-
-        {% trans 'Your username is' %} <b>{{ request.user.username }}</b>.
+    
+        {% trans 'Welcome' %} <b>{{ request.user.username }}</b>.
+        <button class="btn btn-success">Hello</button>
 
     {% else %}
 
-        {% trans 'You are a guest.' %}
+    <header class="masthead">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+              <h1 class="fw-light" style="color: white; font-size:350%; font-weight: 500;">SUSTAINIFY</h1>
+              <p class="lead" style="color: white; font-weight:400;">Submit your orders! Win Rewards! Save the Planet</p>
+              <img src="https://cdn-icons-png.flaticon.com/512/411/411712.png" alt="" width="300" height="250">
+            </div>
+          </div>
+        </div>
+      </header>
+      
 
     {% endif %}
 

@@ -1,0 +1,147 @@
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% get_current_language as language_code %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aboutstyles.css' %}">
+    <!----Fonts for this project---->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!--Bootstrap CDN--->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <!--Title of the website-->
+    <title>Sustainify</title>
+</head>
+<body style="background-color:lightgreen">
+
+  <!----------------------Navbar Starts------------------------------------------>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Sustainify</a>
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/411/411712.png" alt="" width="30" height="25">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="#">About Sustainify</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="#">Rewards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="#">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-capitalize" href="#">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!----------------------Navbar Ends------------------------------------>
+
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Cut delivery operation cost with Sustainify!</h1>
+          <h2 style="color: darkgreen;">We provide optimised delivery system solution to cut your operation cost. We serve! We save! We succeed!</h2>
+          <div>
+            <a href="#about" class="btn-get-started scrollto">Get Started!</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="https://www.seekpng.com/png/full/251-2519834_delivery-rider-delivery-order-png.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <br>
+  <br>
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2 style="color: #1B262C;"></h2>
+        <p style="color: #1B262C;">How Sustainify works?</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon-box">
+            <img style="width: 30px;" src="https://cdn-icons-png.flaticon.com/512/3500/3500833.png">
+            <hr>
+            <h4 class="title"><a href="">Submit your Order ID</a></h4>
+            <p class="description">Once placed your order, submit your Order ID</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            <img style="width: 30px;" src="https://cdn-icons-png.flaticon.com/512/609/609361.png">
+            <hr>
+            <h4 class="title"><a href="">Select courier partner</a></h4>
+            <p class="description">Based on your vendor select courier partner</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+          <div class="icon-box">
+            <img style="width: 30px;" src="https://cdn-icons-png.flaticon.com/512/1035/1035688.png">
+            <hr>
+            <h4 class="title"><a href="">Access personal dashboard</a></h4>
+            <p class="description">Track your contribution to reduction in carbon emission</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-box">
+            <img style="width: 30px;" src="https://cdn-icons-png.flaticon.com/512/3179/3179668.png">
+            <hr>
+            <h4 class="title"><a href="">Win Rewards</a></h4>
+            <p class="description">Get a chance to win rewards and offers on being a climate saver top customer</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+  
+  <!--Js cdn for bootstrap starts-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <!--Js cdn for bootstrap ends---->
+  <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)})
+  </script>
+</body>
+</html>
