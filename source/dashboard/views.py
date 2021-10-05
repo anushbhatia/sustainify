@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contact
 from .forms import ContactForm
 from django.views.generic import ListView, DetailView
+from haversine import Unit
+import haversine as hs
 # Create your views here.\
 class IndexView(ListView):
     template_name = 'dashboard/index.html'
@@ -13,6 +15,11 @@ class IndexView(ListView):
 class ContactDetailView(DetailView):
     model = Contact
     template_name = 'dashboard/contact-detail.html'
+    def calculate():
+        loc1=(28.426846,77.088834)
+        loc2=(28.394231,77.050308)
+        distance=hs.haversine(loc1,loc2,unit=Unit.METERS)
+        return distance
 
 def create(request):
     if request.method == 'POST':

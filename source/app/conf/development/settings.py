@@ -27,10 +27,12 @@ INSTALLED_APPS = [
     # Vendor apps
     'bootstrap4',
     'widget_tweaks',
+    'haversine',
     # Application apps
     'main',
     'accounts',
-    'dashboard'
+    'dashboard',
+    
 ]
 
 MIDDLEWARE = [
